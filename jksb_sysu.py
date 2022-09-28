@@ -85,15 +85,15 @@ def jksb(driver):
         raise Exception('打开健康申报失败')
 
     logging.info("点击下一步")
-    #driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
-    driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/ul/li[1]/a').click()
-    driver.find_element_by_xpath('//*[@id="V1_CTRL335"]').click() #勾选复选框
+    driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
+#     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/ul/li[1]/a').click()
+    driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div[3]/div/div[1]/div[1]/table/tbody/tr[2]/td/div[6]/input').click() #勾选复选框
     
     #wait.until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[@id='form_command_bar']/li[2]")) ) # 出现终止按钮
     wait.until(expected_conditions.text_to_be_present_in_element((By.XPATH, "//*[@id='form_command_bar']/li[1]"), "提交")) # 出现提交按钮
     logging.info("提交健康申报")
-    #driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
-    driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/ul/li[1]/a').click()
+    driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
+#     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/ul/li[1]/a').click()
 
     result=""
     try:
