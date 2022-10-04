@@ -86,9 +86,6 @@ def jksb(driver):
 
     logging.info("点击下一步")
     driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
-#     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/ul/li[1]/a').click()
-    js="document.querySelector('#V1_CTRL335').checked=true;" #勾选复选框
-    driver.execute_script(js)
     
     #wait.until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[@id='form_command_bar']/li[2]")) ) # 出现终止按钮
     wait.until(expected_conditions.text_to_be_present_in_element((By.XPATH, "//*[@id='form_command_bar']/li[1]"), "提交")) # 出现提交按钮
